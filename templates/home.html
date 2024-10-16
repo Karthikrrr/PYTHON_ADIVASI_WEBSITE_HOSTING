@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadivasi</title>
+
+  <link rel="stylesheet" href="/static/css/styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/static/images/logo2.png" />
+
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <link href="/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<style>
+  .hhgg a{
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hhgg a:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .contact-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .contact-buttons a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .contact-buttons a img:hover {
+    transform: scale(1.1);
+  }
+</style>
+
+<body>
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center ">
+
+      <nav id="navmenu" class="navmenu me-auto">
+        <ul>
+          <li><a href="{% url 'cart_view' %}">Add to Cart</a></li>
+          <li><a href="{% url 'product' %}">Products</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="/static/images/logo2.png" alt="">
+        <!-- <h1 class="sitename">Aadivasi</h1> -->
+      </a>
+
+      <div class="header-social-links  ms-auto">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="cart"><i class="bi bi-cart-plus-fill"></i></a>
+      </div>
+    </div>
+    </div>
+  </header>
+  <main class="main">
+
+    <!-- Prodict Section -->
+
+
+    <section class="mt-5">
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-7 product-image">
+            <a href="{% url 'product' %}"> <img src="/static/images/first-img.jpeg" alt="" class="img-fluid pt-5"></a>
+          </div>
+
+          <div class="col-lg-4 align-items-center justify-content-center">
+            <a href="{% url 'product' %}">
+              <form action="/submit_order" method="POST" class="mt-4 hhgg">
+                <!-- Product Info -->
+                <div class="mb-3 price-tag">
+                  <h1>Adivasi Hakki Pikki Hair Oil (Original) COD (Cash On Delivery) + Free Delivery</h1>
+                  <p>Sale price <span> Rs. 1,499.00 </span> Sale</p>
+                  <p>Taxes included.</p>
+                </div>
+
+
+                <button type="button" class="btn btn-custom active" id="option1" onclick="toggleActive('option1')">
+                  <a href="{% url 'product' %}"><label for="">500ML (6 Months Course) #Bestseller
+                      #ValueForMoney</label></a>
+                </button>
+
+                <button type="button" class="btn btn-custom" id="option2" onclick="toggleActive('option2')">
+                  <a href="{% url 'product' %}"><label for="">250ML (45 Days Course)</label></a>
+                </button>
+
+                <button type="button" class="btn btn-custom" id="option3" onclick="toggleActive('option3')">
+                  <a href="{% url 'product' %}"><label for="">1 Liter (6 Monts Course)</label></a>
+                </button>
+
+
+                <div class="mb-3 quntity-btn">
+                  <label for="quantity" class="form-label">Quantity</label>
+                  <input type="number" class="form-control" id="quantity" name="quantity" value="1" min="1" required>
+                </div>
+
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+
+                  <button type="button" class="btn  cart-btn" id="addToCartBtn"
+                    onclick="toggleActive('addToCartBtn')">Add
+                    to Cart</button>
+
+
+                  <button type="submit" class="btn  cart-btn active" id="buyNowBtn"
+                    onclick="toggleActive('buyNowBtn')">Buy Now</button>
+                </div>
+              </form>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="col-lg-12 mt-5 d-flex justify-content-center">
+      <h2> COD (Cash On Delivery) + Free Delivery </h2>
+    </div>
+
+
+    <!-- Product Section End -->
+
+    <!-- <section class="product-details mt-5 ">
+      <div class="container">
+        <div class="row align-items-center order-2 order-lg-1">
+          <div class="col-lg-5 prd-detials">
+            <h3>Adivasi Hakki Pikki Hair Oil (Original)</h3>
+            <p>Adivasi Halli Piki herbal hair oil made by pure ayurvedhic herbs which is effectively prevents the hair fall and help to grow long hairs with no side effects.</p>
+            <p>Hakki Pikki Adivasi Herbal Hair Oil is crafted from 108 herbal ingredients, including Bringaraj, Brahmi, hibiscus, Jatamansi, Cuscus, fenugreek, smallonions, Balachaddi, curry leaves, and rathanchor parts. This unique blend of Adivasi herbal hair oil is designed to protect against baldness and promote stronger, healthier hair for a lifetime.</p>
+            <p>Adivasi Hair Oil .We are ready to return your money back if results are not seen in 15 days .Our Sri Neelambari Adivasi Hair Oil is pure and potent. It originates from natural herbs harnessed from the depths of the Adivasi tradition. This oil represents the epitome of purity. It is a tribute to the rich heritage of the Adivasi communities. We offer a holistic approach to hair care with years of experience formulating hair oils.</p>
+          </div>
+          <div class="col-lg-7 d-flex order-1 order-lg-2">
+            <img src="images/second-img.jpeg" alt="" class="img fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+      -->
+
+    <!-- Show Casing Section -->
+    <section class="mt-4 show-case">
+      <div class="container">
+        <div class="row  ">
+          <div class="col-lg-12 d-flex justify-content-center ">
+            <h3>Adivasi Hair Oil</h3>
+          </div>
+          <div class="col-lg-12  d-flex justify-content-center ">
+            <h4>Buy Now From Hakki Pikki Official Original Adivasi Hair Oil Website</h4>
+          </div>
+
+          <div class="col-lg-12 mt-3 d-flex justify-content-center ">
+            <h4 class="p-3"> Adivasi Hair Oil .We are ready to return your money back if results are not seen in 15 days
+              .Our Sri Neelambari Adivasi Hair Oil is pure and potent. It originates from natural herbs harnessed from
+              the depths of the Adivasi tradition. This oil represents the epitome of purity. It is a tribute to the
+              rich heritage of the Adivasi communities. We offer a holistic approach to hair care with years of
+              experience formulating hair oils. </h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End of Show Casing Section  -->
+
+
+    <!-- Cards Showcasing Websites -->
+
+    <section class="cards-section mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="container mt-5">
+              <!-- Image and Name Card -->
+              <div class="custom-card">
+                <img src="/static/images/card1.jpeg" alt="Centered Product Image">
+                <div class="card-body">
+                  <h5 class="card-title">WE USE PURE COCONUT OIL</h5>
+                  <p class="card-text">We use 100% Pure oil for real Nourishment from root to tip</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="container mt-5">
+              <!-- Image and Name Card -->
+              <div class="custom-card">
+                <img src="/static/images/card4.jpeg" alt="Centered Product Image">
+                <div class="card-body">
+                  <h5 class="card-title">MADE IN INDIA</h5>
+                  <p class="card-text"> We make the product in a tribal village in Nagarahile Forest,Mysore.</p>
+                </div>
+              </div>
+
+
+
+            </div>
+
+
+          </div>
+
+          <div class="col-lg-4">
+            <div class="container mt-5">
+              <!-- Image and Name Card -->
+              <div class="custom-card">
+                <img src="/static/images/card2.jpeg" alt="Centered Product Image">
+                <div class="card-body">
+                  <h5 class="card-title">NATURAL Herbs AND OILS</h5>
+                  <p class="card-text">We use 100% pure herbs to fight multiple hairs and scalp Problems.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      </div>
+    </section>
+    <!-- End Of cards Section -->
+
+    <!-- Book now button -->
+    <div class="buy-btn d-flex justify-content-center mt-3">
+      <a href="products.html">
+        <button type="submit" class="button">Buy Now</button></a>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 ">
+            <img src="/static/images/galley1.jpeg" class="img-fluid">
+            <img src="/static/images/galley2.jpeg" class="img-fluid">
+            <img src="/static/images/gallery3.jpeg" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End of Gallery Section -->
+    <section class="Process mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12  d-flex justify-content-center align-item-center">
+            <h3>How To Use Adivasi Hair Oil</h3>
+          </div>
+          <div class="col-lg-12  d-flex justify-content-center align-item-center">
+            <p><strong>Direction to use:</strong> Apply night time,wash in the morning. Thrice in a week for 3 to 6
+              months to get better result</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <div class="contact-buttons">
+      <a href="https://wa.me/+917204107479" target="_blank" class="whatsapp-button">
+        <img src="https://cdn.pixabay.com/photo/2015/08/03/13/58/whatsapp-873316_1280.png" alt="WhatsApp">
+      </a>
+      <a href="tel:+917204107479" class="phone-button">
+        <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone">
+      </a>
+    </div>
+
+
+    <!-- Footer Section styles -->
+    <footer class="">
+      <div class="foot-sec">
+
+        <!-- Logo Section -->
+        <div class="col-lg-4">
+          <div style="flex: 1;" class="foot-img">
+            <a href="/">
+              <img src="/static/images/logo2.png" alt="Company Logo" style="max-width: 200px;">
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="col-lg-4">
+          <div style="flex: 2;" class="contact-info">
+            <p>
+              <strong>Adivasi Hakki Pikki Hair Oil</strong><br>
+              2nd, Pakshirajapura, Nellurupala Post,<br>
+              Hanagudu Hobali, Hunsur Taluk, Nallurunala, Mysuru, Karnataka, India-571105
+            </p>
+          </div>
+        </div>
+
+        <!-- Social Media Links Section -->
+        <div class="col-lg-4">
+          <div style="flex: 2;" class="order-info">
+            <p>
+              <strong>Order Process</strong>
+              Once an Order is Placed from the customer,The Product will be Shipped and deliverable eithin 3
+              days(Express Delivery). <br>
+              <strong>Cancellation Process:</strong> Customer can cancel the order within 24 hours
+            </p>
+          </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="col-lg-12">
+          <div style="border-top: 1px solid #ddd; padding: 10px 0; margin-top: 20px;">
+            <p style="margin: 0; color: #000000;">&copy; 2024 Adivasi Hakki Pikki Hair Oil . All rights reserved.</p>
+          </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script>
+      function toggleActive(buttonId) {
+        // Get all buttons with the class 'btn-custom'
+        var buttons = document.querySelectorAll('.btn-custom');
+
+        // Remove 'active' class from all buttons
+        buttons.forEach(function (button) {
+          button.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked button
+        var selectedButton = document.getElementById(buttonId);
+        selectedButton.classList.add('active');
+      }
+    </script>
+
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/aos/aos.js"></script>
+    <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+
+
+    <script src="/static/main.js"></script>
+</body>
+
+</html>
